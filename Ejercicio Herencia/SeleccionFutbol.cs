@@ -11,6 +11,7 @@ namespace Ejercicio_Herencia
         private int id, edad;
         private string nombre, apellido;
         private static int contadorIntegrantes;
+        private bool concentrarse=true, viajar=true;//TODO:Le he asignado viajar true para no cambiarlo en el main uno a uno
         public SeleccionFutbol()
         {
             contadorIntegrantes++;
@@ -23,14 +24,23 @@ namespace Ejercicio_Herencia
             this.edad = edad;
             contadorIntegrantes++;
         }
-        public void Concentrarse()
+        public void SetConcentrarse(bool concentrarse)
         {
-
+            this.concentrarse = concentrarse;
         }
-        public void Viajar()
+        public void SetViajar(bool viajar)
         {
-
+            this.viajar = viajar;
         }
+        public bool GetConcentrarse()
+        {
+            return concentrarse;
+        }
+        public bool GetViajar()
+        {
+            return viajar;
+        }
+
         public void ShowAll()
         {
             Console.WriteLine("Id: "+id+"\nNombre: "+nombre+"\nApellido: "+apellido+"\nEdad: "+edad);

@@ -21,17 +21,31 @@ namespace Ejercicio_Herencia
             UgandaFutbolista.Add(CrearFutbolista(5, "Rakel", "Cortés", 29, 8, "Portero"));
             UgandaFutbolista.Add(CrearFutbolista(6, "Marpe", "Marcelino", 32, 0, "Defensa"));
             UgandaFutbolista.Add(CrearFutbolista(7, "Naiara", "Tataya", 30, 99, "Centro"));
-
-
-//            Se va a celebrar un partido en Londres, por lo que todos deberán realizar las siguientes operaciones:
-//Ø Viajar
-//Ø Concentrarse
-//Ø Una vez que han llegado al destino cada uno deberá hacer su tarea,
-//o   si es futbolista à Entrenar
-//o   si es entrenador à Dirigir entrenamiento
-//o si es masajista à dar masajes
-
-
+            Console.WriteLine("\nDirigiendo entrenamiento:\n");
+            foreach (Entrenador item in UgandaEntrenador)
+            {
+                if (item.GetConcentrarse() && item.GetViajar())
+                {
+                    item.ShowAll1();
+                }
+            }
+            Console.WriteLine("\nEntrenando:\n");
+            foreach (var item in UgandaMasajista)
+            {
+                if (item.GetConcentrarse() && item.GetViajar())
+                {
+                    item.ShowAll1();
+                }
+            }
+            Console.WriteLine("\nMasajeando:\n");
+            foreach (var item in UgandaFutbolista)
+            {
+                if (item.GetConcentrarse() && item.GetViajar())
+                {
+                    item.ShowAll1();
+                }
+            }
+            Console.ReadLine();
         }
         public static Entrenador CrearEntrenador()
         {
