@@ -19,7 +19,7 @@ namespace Ejercicio_Herencia
             this.titulacion = titulacion;
             this.añosExperiencia = añosExperiencia;
         }
-        public void ShowAll1()
+        public override void ShowAll()
         {
             base.ShowAll();
             Console.WriteLine("Titulación: " + titulacion + "\nAños de experiencia: " + añosExperiencia);

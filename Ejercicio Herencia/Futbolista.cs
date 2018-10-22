@@ -19,7 +19,7 @@ namespace Ejercicio_Herencia
             this.dorsal = dorsal;
             this.demarcacion = demarcacion;
         }
-        public void ShowAll1()
+        public override void ShowAll()
         {
             base.ShowAll();
             Console.WriteLine("Dorsal: " + dorsal + "\n Demarcación: " + demarcacion);

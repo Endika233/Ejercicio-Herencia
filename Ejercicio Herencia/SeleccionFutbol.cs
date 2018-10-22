@@ -41,7 +41,7 @@ namespace Ejercicio_Herencia
             return viajar;
         }
 
-        public void ShowAll()
+        public virtual void ShowAll()
         {
             Console.WriteLine("Id: "+id+"\nNombre: "+nombre+"\nApellido: "+apellido+"\nEdad: "+edad);
         }

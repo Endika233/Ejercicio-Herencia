@@ -17,7 +17,7 @@ namespace Ejercicio_Herencia
         {
             this.idFederacion = idFederacion;
         }
-        public void ShowAll1()
+        public override void ShowAll()
         {
             base.ShowAll();
             Console.WriteLine("Id Federación: " + idFederacion);

@@ -10,6 +10,7 @@ namespace Ejercicio_Herencia
     {
         static void Main(string[] args)
         {
+            SeleccionFutbol Seleccion = new SeleccionFutbol();
             List<SeleccionFutbol> Uganda = new List<SeleccionFutbol>();
             List<Entrenador> UgandaEntrenador = new List<Entrenador>();
             List<Masajista> UgandaMasajista = new List<Masajista>();
@@ -26,7 +27,7 @@ namespace Ejercicio_Herencia
             {
                 if (item.GetConcentrarse() && item.GetViajar())
                 {
-                    item.ShowAll1();
+                    item.ShowAll();
                 }
             }
             Console.WriteLine("\nEntrenando:\n");
@@ -34,7 +35,7 @@ namespace Ejercicio_Herencia
             {
                 if (item.GetConcentrarse() && item.GetViajar())
                 {
-                    item.ShowAll1();
+                    item.ShowAll();
                 }
             }
             Console.WriteLine("\nMasajeando:\n");
@@ -42,9 +43,10 @@ namespace Ejercicio_Herencia
             {
                 if (item.GetConcentrarse() && item.GetViajar())
                 {
-                    item.ShowAll1();
+                    item.ShowAll();
                 }
             }
+            Console.WriteLine(Seleccion.GetIntegrantes()-1+" integrantes");//Restas uno poque has creado otro objeto para poder usar GetIntegrantes
             Console.ReadLine();
         }
         public static Entrenador CrearEntrenador()
