@@ -62,21 +62,30 @@ namespace Ejercicio_Herencia
         }
         public void AltaSeleccion(SeleccionFutbol objeto)
         {
-            Participantes++;
+            
             if (objeto.GetType().Name == "Entrenador" && Participantes < 30 && EntrenadorContador < 2)
             {
                 seleccion.Add(objeto);
                 EntrenadorContador++;
+                Participantes++;
             }
             else if (objeto.GetType().Name == "Masajista" && Participantes < 30 && MasajistaContador < 4)
             {
                 seleccion.Add(objeto);
                 MasajistaContador++;
+                Participantes++;
             }
             else if (objeto.GetType().Name == "Futbolista" && Participantes < 30)
             {
                 seleccion.Add(objeto);
                 FutbolistaContador++;
+                Participantes++;
+            }
+            else
+            {
+                Console.WriteLine("------------\nLímite de integrante superado");
+                objeto.ShowAll();
+                Console.WriteLine("No ha sido añadido \n----------------------");
             }
         }
         public bool BajaSeleccion(SeleccionFutbol c)
@@ -87,7 +96,6 @@ namespace Ejercicio_Herencia
                 Participantes--;
                 seleccion.Remove(c);
                 Console.WriteLine("-------------------------\nSe ha echado al entrenador");
-
                 return true;
             }
             else if (c.GetType().Name == "Masajista" && seleccion.IndexOf(c) != -1)

@@ -18,7 +18,7 @@ namespace Ejercicio_Herencia
             Futbolista f2 = CrearFutbolista(5, "Rakel", "Cortés", 29, 8, "Portero");
             Futbolista f3 = CrearFutbolista(6, "Marpe", "Marcelino", 32, 0, "Defensa");
             Futbolista f4 = CrearFutbolista(7, "Naiara", "Tataya", 30, 99, "Centro");
-            Uganda.AltaSeleccion(e1);
+            Uganda.AltaSeleccion(e1); Uganda.AltaSeleccion(e1); Uganda.AltaSeleccion(e1);//Prueba tope entrenadores
             Uganda.AltaSeleccion(m1);
             Uganda.AltaSeleccion(m2);
             Uganda.AltaSeleccion(f1);
