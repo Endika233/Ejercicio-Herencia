@@ -88,7 +88,34 @@ namespace Ejercicio_Herencia
                 Console.WriteLine("No ha sido añadido \n----------------------");
             }
         }
-        public bool BajaSeleccion(SeleccionFutbol c)
+        public bool BajaSeleccion(int id)
+        {
+            foreach (SeleccionFutbol item in seleccion)
+            {
+                if (item.GetId() == id)
+                {
+                    seleccion.Remove(item);
+                    Participantes--;
+                    Console.WriteLine("El seleccionado con ID "+id+" ha sido eliminado");
+                    if (item.GetType().Name == "Entrenador")
+                    {
+                        EntrenadorContador--;
+                    }
+                    else if (item.GetType().Name == "Masajista")
+                    {
+                        MasajistaContador--;
+                    }
+                    else if (item.GetType().Name == "Futbolista")
+                    {
+                        FutbolistaContador--;
+                    }
+                    return true;
+                }
+            }
+            Console.WriteLine("No pudo encontrarse ninguna coincidencia");
+            return false;
+        }
+        public bool BajaSeleccionConObjeto(SeleccionFutbol c)//No has leido bien y era dar de baja con el id
         {
             if (seleccion.IndexOf(c)!=-1&&c.GetType().Name=="Entrenador")
             {

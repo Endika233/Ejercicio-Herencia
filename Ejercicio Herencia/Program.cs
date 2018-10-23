@@ -10,6 +10,7 @@ namespace Ejercicio_Herencia
     {
         static void Main(string[] args)
         {
+
             SeleccionPais Uganda = new SeleccionPais("Uganda");
             Entrenador e1 = CrearEntrenador(1, "Poter", "Lopez", 49, "Nivel Máximo", 18);
             Masajista m1 = CrearMasajista(2, "Pitxon", "Llamosas", 38, "Club Artemis");
@@ -26,9 +27,10 @@ namespace Ejercicio_Herencia
             Uganda.AltaSeleccion(f3);
             Uganda.AltaSeleccion(f4);
             Uganda.MostrarDatosSeleccion();
-            Uganda.BajaSeleccion(e1);
-            Uganda.BajaSeleccion(e1);
-            Uganda.BajaSeleccion(e1);
+            Uganda.BajaSeleccionConObjeto(e1);
+            Uganda.BajaSeleccionConObjeto(e1);
+            Uganda.BajaSeleccionConObjeto(e1);
+            Uganda.BajaSeleccion(2);
             Uganda.MostrarDatosSeleccion();
             //SeleccionFutbol Seleccion = new SeleccionFutbol();
             //List<SeleccionFutbol> Uganda = new List<SeleccionFutbol>();

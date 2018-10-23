@@ -24,6 +24,10 @@ namespace Ejercicio_Herencia
             this.edad = edad;
             contadorIntegrantes++;
         }
+        public int GetId()
+        {
+            return this.id;
+        }
         public void SetConcentrarse(bool concentrarse)
         {
             this.concentrarse = concentrarse;
