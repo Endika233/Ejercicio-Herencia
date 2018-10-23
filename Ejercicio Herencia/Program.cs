@@ -10,7 +10,7 @@ namespace Ejercicio_Herencia
     {
         static void Main(string[] args)
         {
-            int eleccionMenu,eleccionCrear,edad,id,añosExperiencia;
+            int eleccionMenu, eleccionCrear, edad, id, añosExperiencia;
             string nombre, apellido,titulacion,idFederacion,demarcacion;
 
             Console.WriteLine("\t\t\t**********Bienvenido a FIFA 1974**********\n\n");
