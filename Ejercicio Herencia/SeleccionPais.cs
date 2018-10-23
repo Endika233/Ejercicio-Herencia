@@ -103,7 +103,7 @@ namespace Ejercicio_Herencia
                 MasajistaContador--;
                 Participantes--;
                 seleccion.Remove(c);
-                Console.WriteLine("Se ha echado al masajista");
+                Console.WriteLine("-------------------------\nSe ha echado al masajista");
                 return true;
             }
             else if (c.GetType().Name == "Futbolista" && seleccion.IndexOf(c) != -1)
@@ -111,7 +111,7 @@ namespace Ejercicio_Herencia
                 FutbolistaContador--;
                 Participantes--;
                 seleccion.Remove(c);
-                Console.WriteLine("Se ha echado al futbolista");
+                Console.WriteLine("-------------------------\nSe ha echado al futbolista");
                 return true;
             }
             Console.WriteLine("---------------\nNo se ha encontrado ningun " + c.GetType().Name + " en la seleccion");

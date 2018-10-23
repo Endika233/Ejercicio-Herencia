@@ -28,6 +28,7 @@ namespace Ejercicio_Herencia
             Uganda.MostrarDatosSeleccion();
             Uganda.BajaSeleccion(e1);
             Uganda.BajaSeleccion(e1);
+            Uganda.BajaSeleccion(e1);
             Uganda.MostrarDatosSeleccion();
             //SeleccionFutbol Seleccion = new SeleccionFutbol();
             //List<SeleccionFutbol> Uganda = new List<SeleccionFutbol>();
