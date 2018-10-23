@@ -9,38 +9,114 @@ namespace Ejercicio_Herencia
     class SeleccionPais
     {
         private string NombreSeleccion;
-        private List<SeleccionFutbol> Seleccion = new List<SeleccionFutbol>();
+        private List<SeleccionFutbol> seleccion = new List<SeleccionFutbol>();
         private static int Participantes,EntrenadorContador,MasajistaContador,FutbolistaContador;
-        public SeleccionPais()
+        public SeleccionPais(string nombreSeleccion)
         {
-            Participantes++;
-        }
-        public SeleccionPais(SeleccionFutbol objeto)
+            this . NombreSeleccion = nombreSeleccion;
+        }       
+        public SeleccionPais(List<SeleccionFutbol>Seleccion,string NombreSeleccion)//Al usar este método se borraría la lista anterior
         {
-            Participantes++;
-            if (objeto.GetType().Name == "Entrenador"&&Participantes<30&&EntrenadorContador<2)
+            this.NombreSeleccion = NombreSeleccion;
+            if (Seleccion.Count() > 30)
             {
-                Seleccion.Add(objeto);
+                foreach (var item in Seleccion)
+                {
+                    Participantes++;
+                    if (item.GetType().Name == "Entrenador")
+                    {
+                        EntrenadorContador++;
+                        if (EntrenadorContador > 2)
+                        {
+                            Console.WriteLine("No puede haber más de dos etrenadores en la selección");
+                        }
+                        
+                    }
+                    else if (item.GetType().Name == "Masajista")
+                    {
+                        MasajistaContador++;
+                        if (MasajistaContador > 4)
+                        {
+                            Console.WriteLine("No puede haber más de cuatro masajistas en la selección");
+                        }
+                    }
+                    else if (item.GetType().Name == "Futbolista")
+                    {
+                        FutbolistaContador++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Si sale esto, es que ha debido de entrar un objeto extaño en la lista, revisa el constructor SeleccionPais con listas");
+                    }
+                }
+                if (MasajistaContador <= 4 && EntrenadorContador <= 2)
+                {
+                    this.seleccion = Seleccion;
+                }
+                            
+            }
+            else
+            {
+                Console.WriteLine("No puede haber más de 30 integrantes en la selección");
+            }
+        }
+        public void AltaSeleccion(SeleccionFutbol objeto)
+        {
+            Participantes++;
+            if (objeto.GetType().Name == "Entrenador" && Participantes < 30 && EntrenadorContador < 2)
+            {
+                seleccion.Add(objeto);
                 EntrenadorContador++;
             }
-            else if ( objeto.GetType().Name == "Masajista"&&Participantes<30&&MasajistaContador<4)
+            else if (objeto.GetType().Name == "Masajista" && Participantes < 30 && MasajistaContador < 4)
             {
-                Seleccion.Add(objeto);
+                seleccion.Add(objeto);
                 MasajistaContador++;
             }
-            else if (objeto.GetType().Name == "Futbolista"&&Participantes<30)
+            else if (objeto.GetType().Name == "Futbolista" && Participantes < 30)
             {
-                Seleccion.Add(objeto);
+                seleccion.Add(objeto);
                 FutbolistaContador++;
             }
         }
+        public bool BajaSeleccion(SeleccionFutbol c)
+        {
+            if (seleccion.IndexOf(c)!=-1&&c.GetType().Name=="Entrenador")
+            {
+                EntrenadorContador--;
+                Participantes--;
+                seleccion.Remove(c);
+                Console.WriteLine("-------------------------\nSe ha echado al entrenador");
+
+                return true;
+            }
+            else if (c.GetType().Name == "Masajista" && seleccion.IndexOf(c) != -1)
+            {
+                MasajistaContador--;
+                Participantes--;
+                seleccion.Remove(c);
+                Console.WriteLine("Se ha echado al masajista");
+                return true;
+            }
+            else if (c.GetType().Name == "Futbolista" && seleccion.IndexOf(c) != -1)
+            {
+                FutbolistaContador--;
+                Participantes--;
+                seleccion.Remove(c);
+                Console.WriteLine("Se ha echado al futbolista");
+                return true;
+            }
+            Console.WriteLine("---------------\nNo se ha encontrado ningun " + c.GetType().Name + " en la seleccion");
+            return false;//No hace falta meterlo en un else porque ya se para en el return si ha encontrado algún caso
+        }
         public void MostrarDatosSeleccion()
         {
-            Console.WriteLine("\t\t\tSelección de " + NombreSeleccion);
-            foreach (SeleccionFutbol miembros in Seleccion)
+            Console.WriteLine("\t\t\tSelección de " + NombreSeleccion+" con "+Participantes+" integrantes");
+            foreach (SeleccionFutbol miembros in seleccion)
             {
                 miembros.ShowAll();
             }
         }
+
     }
 }
